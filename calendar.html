@@ -130,7 +130,7 @@
           </svg>
           Submit an Event
         </a>
-        <a href="https://calendar.google.com/calendar/render?cid=0b1845bcd66b0f75325fad4d0d72f4a1afa22a550ee1c8f5f000d3e1b5fd9c72%40group.calendar.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+        <a href="#subscribe" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
@@ -177,15 +177,75 @@
       <!-- Google Calendar Embed -->
       <div class="max-w-7xl mx-auto">
         <div class="bg-gray-50 rounded-2xl p-6">
-          <iframe 
-            src="https://calendar.google.com/calendar/embed?src=0b1845bcd66b0f75325fad4d0d72f4a1afa22a550ee1c8f5f000d3e1b5fd9c72%40group.calendar.google.com&ctz=America%2FChicago&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600"
-            style="border: 0" 
-            width="100%" 
-            height="600" 
-            frameborder="0" 
+          <iframe
+            id="calendar-iframe"
+            src="https://calendar.google.com/calendar/embed?ctz=America%2FChicago&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600&src=8f93b04db35b77f3104abea5f628933f53bb27e4c397681cc5cd69509d7bc5a5%40group.calendar.google.com&color=%232196F3&src=45c669b78cc46a600a4268ac11ee0d30c79a23912b18ddacab09e85e60a614f5%40group.calendar.google.com&color=%234CAF50&src=5621597bb37f9aa7ca5cf512c732fb9ceba3dbb5e9d28448216f5fee0d445aff%40group.calendar.google.com&color=%239C27B0&src=41965c0710ef28ff770537eda7f201cd746864de9c1dcf9a7929f5ab586621d9%40group.calendar.google.com&color=%23E91E63&src=b0fcae98d9c75ff7b762e5b6aacdab60266a9a87a2530b840782e3ebc2f2d78c%40group.calendar.google.com&color=%23009688"
+            style="border: 0"
+            width="100%"
+            height="600"
+            frameborder="0"
             scrolling="no">
           </iframe>
+          <div id="calendar-empty-note" class="hidden text-center text-gray-500 py-12">Select at least one category above to see its events.</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SUBSCRIBE SECTION -->
+  <section id="subscribe" class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Subscribe to Calendar Updates</h2>
+      <p class="text-gray-600 mb-8">Get SNAP events in your own Google Calendar. Check the categories you want, then subscribe. Each category opens a Google Calendar page where you confirm with one click. Google adds one calendar per click, so subscribing to several categories opens one tab per category (your browser may ask you to allow pop-ups for this site).</p>
+      <div class="bg-white rounded-2xl p-8 shadow-sm text-left">
+        <div class="mb-8">
+            <label class="flex items-center justify-between gap-4 py-2 border-b border-gray-100 last:border-0">
+              <span class="flex items-center gap-3">
+                <input type="checkbox" class="subscribe-cb h-5 w-5 rounded border-gray-300 text-vibrant-orange focus:ring-vibrant-orange" value="meeting" checked>
+                <span class="w-3 h-3 rounded-full bg-vibrant-blue inline-block"></span>
+                <span class="text-gray-800 font-medium">Community Meetings</span>
+              </span>
+              <a href="https://calendar.google.com/calendar/render?cid=8f93b04db35b77f3104abea5f628933f53bb27e4c397681cc5cd69509d7bc5a5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer" class="text-vibrant-orange hover:underline text-sm whitespace-nowrap">Subscribe</a>
+            </label>
+            <label class="flex items-center justify-between gap-4 py-2 border-b border-gray-100 last:border-0">
+              <span class="flex items-center gap-3">
+                <input type="checkbox" class="subscribe-cb h-5 w-5 rounded border-gray-300 text-vibrant-orange focus:ring-vibrant-orange" value="youth" checked>
+                <span class="w-3 h-3 rounded-full bg-vibrant-green inline-block"></span>
+                <span class="text-gray-800 font-medium">Youth Programs</span>
+              </span>
+              <a href="https://calendar.google.com/calendar/render?cid=45c669b78cc46a600a4268ac11ee0d30c79a23912b18ddacab09e85e60a614f5%40group.calendar.google.com" target="_blank" rel="noopener noreferrer" class="text-vibrant-orange hover:underline text-sm whitespace-nowrap">Subscribe</a>
+            </label>
+            <label class="flex items-center justify-between gap-4 py-2 border-b border-gray-100 last:border-0">
+              <span class="flex items-center gap-3">
+                <input type="checkbox" class="subscribe-cb h-5 w-5 rounded border-gray-300 text-vibrant-orange focus:ring-vibrant-orange" value="arts" checked>
+                <span class="w-3 h-3 rounded-full bg-vibrant-purple inline-block"></span>
+                <span class="text-gray-800 font-medium">Arts & Culture</span>
+              </span>
+              <a href="https://calendar.google.com/calendar/render?cid=5621597bb37f9aa7ca5cf512c732fb9ceba3dbb5e9d28448216f5fee0d445aff%40group.calendar.google.com" target="_blank" rel="noopener noreferrer" class="text-vibrant-orange hover:underline text-sm whitespace-nowrap">Subscribe</a>
+            </label>
+            <label class="flex items-center justify-between gap-4 py-2 border-b border-gray-100 last:border-0">
+              <span class="flex items-center gap-3">
+                <input type="checkbox" class="subscribe-cb h-5 w-5 rounded border-gray-300 text-vibrant-orange focus:ring-vibrant-orange" value="health" checked>
+                <span class="w-3 h-3 rounded-full bg-vibrant-pink inline-block"></span>
+                <span class="text-gray-800 font-medium">Health & Wellness</span>
+              </span>
+              <a href="https://calendar.google.com/calendar/render?cid=41965c0710ef28ff770537eda7f201cd746864de9c1dcf9a7929f5ab586621d9%40group.calendar.google.com" target="_blank" rel="noopener noreferrer" class="text-vibrant-orange hover:underline text-sm whitespace-nowrap">Subscribe</a>
+            </label>
+            <label class="flex items-center justify-between gap-4 py-2 border-b border-gray-100 last:border-0">
+              <span class="flex items-center gap-3">
+                <input type="checkbox" class="subscribe-cb h-5 w-5 rounded border-gray-300 text-vibrant-orange focus:ring-vibrant-orange" value="business" checked>
+                <span class="w-3 h-3 rounded-full bg-vibrant-teal inline-block"></span>
+                <span class="text-gray-800 font-medium">Local Business</span>
+              </span>
+              <a href="https://calendar.google.com/calendar/render?cid=b0fcae98d9c75ff7b762e5b6aacdab60266a9a87a2530b840782e3ebc2f2d78c%40group.calendar.google.com" target="_blank" rel="noopener noreferrer" class="text-vibrant-orange hover:underline text-sm whitespace-nowrap">Subscribe</a>
+            </label>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button id="subscribe-selected" class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Subscribe to Selected</button>
+          <button id="subscribe-all" class="bg-white text-vibrant-orange border-2 border-vibrant-orange px-8 py-4 rounded-lg font-semibold hover:bg-vibrant-orange hover:text-white transition-all">Subscribe to All</button>
+        </div>
+        <p id="subscribe-status" class="mt-4 text-center text-sm text-gray-500"></p>
       </div>
     </div>
   </section>
@@ -333,24 +393,36 @@
       smoothScrollTo('book-center');
     });
 
-    // Category filter functionality
+    document.querySelector('a[href="#subscribe"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('subscribe');
+    });
+
+    // Category filter functionality - toggles which public calendars appear in the embed
+    const CALENDARS = {
+      meeting: { id: '8f93b04db35b77f3104abea5f628933f53bb27e4c397681cc5cd69509d7bc5a5@group.calendar.google.com', color: '#2196F3', label: 'Community Meetings' },
+      youth: { id: '45c669b78cc46a600a4268ac11ee0d30c79a23912b18ddacab09e85e60a614f5@group.calendar.google.com', color: '#4CAF50', label: 'Youth Programs' },
+      arts: { id: '5621597bb37f9aa7ca5cf512c732fb9ceba3dbb5e9d28448216f5fee0d445aff@group.calendar.google.com', color: '#9C27B0', label: 'Arts & Culture' },
+      health: { id: '41965c0710ef28ff770537eda7f201cd746864de9c1dcf9a7929f5ab586621d9@group.calendar.google.com', color: '#E91E63', label: 'Health & Wellness' },
+      business: { id: 'b0fcae98d9c75ff7b762e5b6aacdab60266a9a87a2530b840782e3ebc2f2d78c@group.calendar.google.com', color: '#009688', label: 'Local Business' },
+    };
+    const CATEGORY_ORDER = ['meeting', 'youth', 'arts', 'health', 'business'];
+    const calendarIframe = document.getElementById('calendar-iframe');
+    const calendarEmptyNote = document.getElementById('calendar-empty-note');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    let selectedCategories = new Set();
+    let selectedCategories = new Set(CATEGORY_ORDER);
     const selectAllButton = document.querySelector('[data-category="select-all"]');
     const selectNoneButton = document.querySelector('[data-category="select-none"]');
 
     function toggleButtonStyle(button) {
       const color = button.dataset.color;
       const isActive = button.classList.contains('active');
-      
       if (isActive) {
-        // Switch to filled style
         button.classList.remove(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
         button.classList.remove(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
-        button.classList.add(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
+        button.classList.add(`bg-vibrant-${color}`, 'text-white');
       } else {
-        // Switch to outlined style
-        button.classList.remove(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
+        button.classList.remove(`bg-vibrant-${color}`, 'text-white');
         button.classList.add(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
         button.classList.add(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
       }
@@ -360,58 +432,54 @@
       const allButtons = document.querySelectorAll('.filter-btn:not([data-category="select-all"]):not([data-category="select-none"])');
       const allSelected = Array.from(allButtons).every(button => button.classList.contains('active'));
       const noneSelected = Array.from(allButtons).every(button => !button.classList.contains('active'));
+      selectAllButton.classList.toggle('active', allSelected);
+      selectNoneButton.classList.toggle('active', noneSelected);
+      toggleButtonStyle(selectAllButton);
+      toggleButtonStyle(selectNoneButton);
+    }
 
-      // Update Select All button
-      if (allSelected) {
-        selectAllButton.classList.add('active');
-        toggleButtonStyle(selectAllButton);
-      } else {
-        selectAllButton.classList.remove('active');
-        toggleButtonStyle(selectAllButton);
-      }
+    function buildEmbedUrl() {
+      let url = 'https://calendar.google.com/calendar/embed?ctz=America%2FChicago&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600';
+      CATEGORY_ORDER.forEach(cat => {
+        if (selectedCategories.has(cat)) {
+          url += '&src=' + encodeURIComponent(CALENDARS[cat].id) + '&color=' + encodeURIComponent(CALENDARS[cat].color);
+        }
+      });
+      return url;
+    }
 
-      // Update Select None button
-      if (noneSelected) {
-        selectNoneButton.classList.add('active');
-        toggleButtonStyle(selectNoneButton);
+    function refreshCalendarEmbed() {
+      if (selectedCategories.size === 0) {
+        calendarIframe.classList.add('hidden');
+        calendarEmptyNote.classList.remove('hidden');
       } else {
-        selectNoneButton.classList.remove('active');
-        toggleButtonStyle(selectNoneButton);
+        calendarEmptyNote.classList.add('hidden');
+        calendarIframe.classList.remove('hidden');
+        const url = buildEmbedUrl();
+        if (calendarIframe.src !== url) calendarIframe.src = url;
       }
     }
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         const category = button.dataset.category;
-        
         if (category === 'select-all') {
-          // Select all categories
+          selectedCategories = new Set(CATEGORY_ORDER);
           filterButtons.forEach(btn => {
             if (btn !== selectAllButton && btn !== selectNoneButton) {
               btn.classList.add('active');
-              selectedCategories.add(btn.dataset.category);
               toggleButtonStyle(btn);
             }
           });
-          selectAllButton.classList.add('active');
-          selectNoneButton.classList.remove('active');
-          toggleButtonStyle(selectAllButton);
-          toggleButtonStyle(selectNoneButton);
         } else if (category === 'select-none') {
-          // Deselect all categories
+          selectedCategories = new Set();
           filterButtons.forEach(btn => {
             if (btn !== selectAllButton && btn !== selectNoneButton) {
               btn.classList.remove('active');
-              selectedCategories.delete(btn.dataset.category);
               toggleButtonStyle(btn);
             }
           });
-          selectAllButton.classList.remove('active');
-          selectNoneButton.classList.add('active');
-          toggleButtonStyle(selectAllButton);
-          toggleButtonStyle(selectNoneButton);
         } else {
-          // Toggle individual category
           if (selectedCategories.has(category)) {
             selectedCategories.delete(category);
             button.classList.remove('active');
@@ -421,12 +489,47 @@
           }
           toggleButtonStyle(button);
         }
-        
         updateControlButtonsState();
-
-        // Here you would update the calendar view based on selectedCategories
-        console.log('Selected categories:', Array.from(selectedCategories));
+        refreshCalendarEmbed();
       });
+    });
+
+    // Initial state: every category shown
+    filterButtons.forEach(btn => {
+      if (btn !== selectAllButton && btn !== selectNoneButton) {
+        btn.classList.add('active');
+        toggleButtonStyle(btn);
+      }
+    });
+    updateControlButtonsState();
+    refreshCalendarEmbed();
+
+    // Subscribe: open one Google Calendar confirmation tab per selected category
+    function subscribeToCategories(cats) {
+      cats.forEach((cat, i) => {
+        setTimeout(() => {
+          window.open('https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(CALENDARS[cat].id), '_blank');
+        }, i * 300);
+      });
+      const status = document.getElementById('subscribe-status');
+      status.textContent = cats.length === 1
+        ? 'Opening Google Calendar - click "Add" there to confirm.'
+        : 'Opening ' + cats.length + ' tabs, one per category. Click "Add" in each to confirm. If nothing opened, allow pop-ups for this site and try again.';
+    }
+
+    document.getElementById('subscribe-selected').addEventListener('click', () => {
+      const cats = Array.from(document.querySelectorAll('.subscribe-cb:checked')).map(cb => cb.value);
+      const status = document.getElementById('subscribe-status');
+      if (cats.length === 0) {
+        status.textContent = 'Check at least one category first.';
+        return;
+      }
+      subscribeToCategories(cats);
+    });
+
+    document.getElementById('subscribe-all').addEventListener('click', () => {
+      document.querySelectorAll('.subscribe-cb').forEach(cb => { cb.checked = true; });
+      subscribeToCategories(CATEGORY_ORDER);
     });
 
     document.getElementById('event-submission-form').addEventListener('submit', async (e) => {
