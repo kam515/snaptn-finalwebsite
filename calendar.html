@@ -130,6 +130,12 @@
           </svg>
           Submit an Event
         </a>
+        <a href="https://calendar.google.com/calendar/render?cid=0b1845bcd66b0f75325fad4d0d72f4a1afa22a550ee1c8f5f000d3e1b5fd9c72%40group.calendar.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Subscribe to Calendar
+        </a>
         <a href="#book-center" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -172,7 +178,7 @@
       <div class="max-w-7xl mx-auto">
         <div class="bg-gray-50 rounded-2xl p-6">
           <iframe 
-            src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600"
+            src="https://calendar.google.com/calendar/embed?src=0b1845bcd66b0f75325fad4d0d72f4a1afa22a550ee1c8f5f000d3e1b5fd9c72%40group.calendar.google.com&ctz=America%2FChicago&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600"
             style="border: 0" 
             width="100%" 
             height="600" 
@@ -196,12 +202,12 @@
           <form id="event-submission-form" class="space-y-6">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Event Title</label>
-              <input type="text" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              <input name="title" type="text" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
             </div>
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
-              <select required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              <select name="category" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
                 <option value="">Select a category</option>
                 <option value="meeting">Community Meeting</option>
                 <option value="youth">Youth Program</option>
@@ -214,44 +220,45 @@
             <div class="grid grid-cols-3 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Date</label>
-                <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                <input name="date" type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
               </div>
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Start Time</label>
-                <input type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                <input name="start_time" type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
               </div>
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">End Time</label>
-                <input type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                <input name="end_time" type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
               </div>
             </div>
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
-              <input type="text" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              <input name="location" type="text" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
             </div>
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
-              <textarea required rows="4" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange"></textarea>
+              <textarea name="description" required rows="4" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange"></textarea>
             </div>
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Contact Information</label>
               <div class="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <input type="text" required placeholder="First Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                  <input name="first_name" type="text" required placeholder="First Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
                 </div>
                 <div>
-                  <input type="text" required placeholder="Last Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                  <input name="last_name" type="text" required placeholder="Last Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
                 </div>
               </div>
-              <input type="email" required placeholder="Your email" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              <input name="email" type="email" required placeholder="Your email" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
             </div>
             
             <button type="submit" class="w-full bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
               Submit Event
             </button>
+            <p id="form-status" class="mt-4 text-center" role="status"></p>
           </form>
         </div>
 
@@ -424,7 +431,23 @@
 
     document.getElementById('event-submission-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      // Add your event submission logic here
+      const form = e.target;
+      const status = document.getElementById('form-status');
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = true;
+      button.textContent = 'Submitting...';
+      status.textContent = '';
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbwryH8cbeWOd0UDq0JAo0mkc9RQ14iI24EMRdU5B4-KPDTUzkgPPYK07hFDaLBd-igF/exec', { method: 'POST', mode: 'no-cors', body: new FormData(form) });
+        form.reset();
+        status.textContent = 'Thanks! Your event has been submitted and will appear on the calendar once the SNAP team approves it.';
+        status.className = 'mt-4 text-center text-green-600 font-medium';
+      } catch (err) {
+        status.textContent = 'Something went wrong. Please try again, or email your event to snaptn@gmail.com.';
+        status.className = 'mt-4 text-center text-red-600 font-medium';
+      }
+      button.disabled = false;
+      button.textContent = 'Submit Event';
     });
   </script>
 
@@ -450,4 +473,5 @@
   </footer>
 </body>
 </html>
+
 
